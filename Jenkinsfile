@@ -3,7 +3,7 @@ pipeline {
     tools {
         jdk 'Java17'
         maven 'Maven3'
-	 git 'Default Git'
+	git 'Default Git'
     } 
     environment {
 	    APP_NAME = "osc_client"
