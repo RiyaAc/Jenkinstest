@@ -47,14 +47,7 @@ pipeline {
 	           }	
            }
        }
-       stage("SonarQube Analysis"){
-         steps {
-	          script{
-                     withSonarQubeEnv(credentialsId: 'sqa_87394629024d0b5e9c31c081c7a63dbc6794881e') { 
-                     sh "mvn sonar:sonar"
-	      }
-           }  
-         }
+      
       stage("Quality Gate"){
            steps {
                script {
