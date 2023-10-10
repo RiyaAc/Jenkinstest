@@ -41,7 +41,7 @@ pipeline {
      stage("SonarQube Analysis"){
            steps {
 	           script {
-		        withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') { 
+		        withSonarQubeEnv(credentialsId: 'sqa_87394629024d0b5e9c31c081c7a63dbc6794881e') { 
                         sh "mvn sonar:sonar"
 		        }
 	           }	
@@ -51,7 +51,7 @@ pipeline {
       stage("Quality Gate"){
            steps {
                script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonarqube-token'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sqa_87394629024d0b5e9c31c081c7a63dbc6794881e'
                 }	
             }
         }
