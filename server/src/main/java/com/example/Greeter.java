@@ -15,9 +15,10 @@ public class Greeter {
   }
 /**
    * Greets the specified person.
+   * This method takes the name of a person and returns a greeting message.
    *
    * @param someone The name of the person to greet.
-   * @return A greeting message.
+   * @return A greeting message in the format "Hello, [someone]!.
    */
   //TODO: Add javadoc comment
   public String greet(String someone) {
