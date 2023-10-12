@@ -20,7 +20,7 @@ public class Greeter {
    * @param someone The name of the person to greet.
    * @return A greeting message in the format "Hello, [someone]!.
    */
- * //TODO: Add javadoc comment
+   * //TODO: Add javadoc comment
   public String greet(String someone) {
     return String.format("Hello, %s!", someone);
   }
