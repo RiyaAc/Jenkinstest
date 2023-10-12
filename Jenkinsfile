@@ -26,12 +26,12 @@ pipeline {
                 }
         }
 
-    //    stage("Build Application"){
-    //        steps {
-   //             sh "mvn clean package"
-    //        }
+        stage("Build Application"){
+            steps {
+                sh "mvn clean package"
+            }
 
-   //    }
+       }
 
        stage("Test Application"){
            steps {
@@ -47,6 +47,15 @@ pipeline {
 	           }	
            }
        }
+
+      stage("Quality Gate"){
+           steps {
+               script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonarqube-token'
+                }	
+            }
+        }
+
       
      
       stage("Build & Push Docker Image") {
