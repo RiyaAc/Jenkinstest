@@ -5,7 +5,7 @@ pipeline {
         maven 'Maven3'
     } 
     environment {
-	    APP_NAME = "osc_client"
+	    APP_NAME = "ri_jenkins"
             RELEASE = "1.0.0"
             DOCKER_USER = "riyaachkarpohre"
             DOCKER_PASS = 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk'
