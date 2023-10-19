@@ -8,7 +8,7 @@ pipeline {
 	    APP_NAME = "ri_jenkins"
             RELEASE = "1.0.0"
             DOCKER_USER = "riyaachkarpohre"
-            DOCKER_PASS = 'dckr_pat_xb8M5ExYIF5q-Y7MoOmaifbM0a0'
+            DOCKER_PASS = "dckr_pat_xb8M5ExYIF5q-Y7MoOmaifbM0a0"
             IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
             IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
 
