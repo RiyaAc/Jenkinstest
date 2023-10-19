@@ -59,7 +59,7 @@ pipeline {
                          def dockerImageName = "${DOCKER_USER}/${APP_NAME}:${IMAGE_TAG}"
 
                        // Build the Docker image
-                       def dockerImage = "sudo docker.build(dockerImageName, "-f Dockerfile .") "
+                       def dockerImage = sudo docker.build(dockerImageName, "-f Dockerfile .")
 
                       // Push the Docker image to the registry
                       dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://your-docker-registry.com']) {
