@@ -41,18 +41,18 @@ pipeline {
            }
        }
 
-     stage("SonarQube Analysis"){
+         stage("SonarQube Analysis"){
            steps {
 	           script {
 		        withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') { 
                         sh "mvn sonar:sonar"
 		        }
 	           }	
-           }
-       }
+             }
+         }
 
 	    
-     stage("Build & Push Docker Image") {
+          stage("Build & Push Docker Image") {
              steps {
                    script {
                          // Define your Docker image name and tag
@@ -67,10 +67,10 @@ pipeline {
                       //dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://your-docker-registry.com']) {
                       //dockerImage.push()
 			   sh "sudo docker push ${dockerImageName}"
-            } 
-        }
-    }
-}
+               } 
+            }
+         }
+
 
 
         stage("Trivy Scan") {
@@ -111,4 +111,4 @@ pipeline {
             mimeType: 'text/html',to: "ashfaque.s510@gmail.com"
         }      
     }
-//}
+}
