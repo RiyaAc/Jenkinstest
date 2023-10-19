@@ -53,19 +53,22 @@ pipeline {
 
 	    
      stage("Build & Push Docker Image") {
-            steps {
-                script {
-                    docker.withRegistry('', DOCKER_PASS) {
-                        docker_image = docker.build "${IMAGE_NAME}"
-                    }
+             steps {
+                   script {
+                         // Define your Docker image name and tag
+                         def dockerImageName = "${DOCKER_USER}/${APP_NAME}:${IMAGE_TAG}"
 
-                    docker.withRegistry('', DOCKER_PASS) {
-                        docker_image.push("${IMAGE_TAG}")
-                        docker_image.push('latest')
-                    }
-                }
-            }
+                       // Build the Docker image
+                       def dockerImage = docker.build(dockerImageName, "-f Dockerfile .")
+
+                      // Push the Docker image to the registry
+                      dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://your-docker-registry.com']) {
+                      dockerImage.push()
+            } 
         }
+    }
+}
+
 
         stage("Trivy Scan") {
             steps {
