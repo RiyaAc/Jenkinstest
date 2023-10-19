@@ -8,9 +8,10 @@ pipeline {
 	    APP_NAME = "osc_client"
             RELEASE = "1.0.0"
             DOCKER_USER = "riyaachkarpohre"
-            DOCKER_PASS = 'dckr_pat_qDwEQf_08GkgD20u-LNBMXhZpWc '
+            DOCKER_PASS = 'dckr_pat_qDwEQf_08GkgD20u-LNBMXhZpWc'
             IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
             IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+
 	
     }
     stages{
