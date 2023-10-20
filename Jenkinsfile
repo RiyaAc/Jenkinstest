@@ -68,10 +68,10 @@ pipeline {
 		     // dockerImage.push()
 			//dockerImageName.push()		       
 			  // sh "sudo docker push ${dockerImageName}"
-               } 
+            //   } 
             }
          }        
-   // }
+    }
 
     post {
         failure {
