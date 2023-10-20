@@ -69,7 +69,7 @@ pipeline {
 				//		{dockerImage.push()}
 			dockerImage.push()		       
 			//   sh "sudo docker push ${dockerImageName}"
-               } 
+              // } 
             }
          }        
     }
