@@ -72,7 +72,7 @@ pipeline {
 			//   sh "sudo docker push ${dockerImageName}"
 		    sh "sudo docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
 		    sh "sudo docker push ${dockerImageName}"	   
-              // } 
+               } 
             }
          }        
     }
