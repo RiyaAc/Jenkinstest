@@ -64,11 +64,11 @@ pipeline {
 
                       // Push the Docker image to the registry
                      // dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://your-docker-registry.com']) {
-                      dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://hub.docker.com/u/riyaachkarpohre']
+                     // dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://hub.docker.com/u/riyaachkarpohre']
 		     // dockerImage.push()
 			//dockerImageName.push()		       
 			   sh "sudo docker push ${dockerImageName}"
-            //   } 
+               } 
             }
          }        
     }
