@@ -11,8 +11,6 @@ pipeline {
             DOCKER_PASS = "dckr_pat_xb8M5ExYIF5q-Y7MoOmaifbM0a0"
             IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
             IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-
-	
     }
     stages{
         stage("Cleanup Workspace"){
