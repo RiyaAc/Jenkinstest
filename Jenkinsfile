@@ -89,4 +89,5 @@ pipeline {
             mimeType: 'text/html',to: "riya.a@technobase.in"
         }      
     }
+  }
 }
