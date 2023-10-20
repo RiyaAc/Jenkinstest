@@ -59,7 +59,8 @@ pipeline {
 
                        // Build the Docker image
                        //def dockerImage = sudo docker.build(dockerImageName, "-f Dockerfile .")
-			   sh "sudo docker build -t ${dockerImageName} ."
+			 def dockerImage = sh "sudo docker build -t ${dockerImageName} ."
+			   
 
                       // Push the Docker image to the registry
                      // dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://your-docker-registry.com']) {
