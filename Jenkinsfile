@@ -67,9 +67,11 @@ pipeline {
                      // dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: 'https://hub.docker.com/u/riyaachkarpohre']
 		     //  dockerImage.withRegistry([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: ' ']
 				//		{dockerImage.push()}
-			 dockerImage([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: ' ']
-			 dockerImage.push()		       
+			// dockerImage([credentialsId: 'dckr_pat__q6AAb1T_91GS7Pne5MBpHXKIRk', url: ' ']
+			// dockerImage.push()		       
 			//   sh "sudo docker push ${dockerImageName}"
+		    sh "sudo docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
+		    sh "sudo docker push ${dockerImageName}"	   
               // } 
             }
          }        
