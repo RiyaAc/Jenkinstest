@@ -35,6 +35,6 @@
    <br>
    <h1> Happy Learning. See You Again. </h1>
     <br>
-    <h1> Riya </h1>
+    <h1> Ria </h1>
    
 </form>
