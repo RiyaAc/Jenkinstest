@@ -88,6 +88,7 @@ pipeline {
         stage ('Cleanup Artifacts') {
             steps {
                 script {
+		    sh "sudo docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
                     sh "docker rmi ${IMAGE_NAME}:${IMAGE_TAG}"
                     sh "docker rmi ${IMAGE_NAME}:latest"
                 }
