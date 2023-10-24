@@ -90,7 +90,7 @@ pipeline {
                 script {
 		    sh "sudo docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
                     sh "sudo docker rmi ${IMAGE_NAME}:${IMAGE_TAG}"
-                    sh "sudo docker rmi ${IMAGE_NAME}:latest"
+                 // sh "sudo docker rmi ${IMAGE_NAME}:latest"
                 }
             }
         }
